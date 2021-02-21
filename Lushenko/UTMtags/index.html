@@ -14,7 +14,44 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <div class="container-md"></div>
+    <div class="container-md">
+      <div class="mb-3 text-center">
+        <h1>URL parser</h1>
+        <h2>with UTM tags inside</h2>
+      </div>
+      <div class="mb-3">
+        <label for="Textarea1" class="form-label">URL data</label>
+        <textarea
+          class="form-control"
+          id="Textarea1"
+          rows="3"
+          type="textarea"
+          autofocus
+        ></textarea>
+        <div class="form-text">Insert URL to parse</div>
+      </div>
+      <div class="mb-3">
+        <label for="btn1" class="form-label col-12">Click to parse</label>
+        <input
+          class="btn btn-primary col-3"
+          id="btn1"
+          type="button"
+          value="parse"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="output1" class="form-label col-12">Result data</label>
+        <textarea
+          class="form-control"
+          type="textarea"
+          name="output1"
+          id="output1"
+          cols=""
+          rows="5"
+          readonly
+        ></textarea>
+      </div>
+    </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
