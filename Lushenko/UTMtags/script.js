@@ -1,4 +1,8 @@
 document.querySelector('.btn1').addEventListener('click', parseURL);
+document.querySelector('.textarea1').addEventListener('click', function () {
+  //   this.focus();
+  this.select();
+});
 function parseURL() {
   const str = document.querySelector('.textarea1').value;
   let urlData = new URL(str);
@@ -6,7 +10,7 @@ function parseURL() {
   out.textContent = `Host: ${urlData.host};\n`;
   let utmObj = parseUTMtoJSON(urlData.search);
   for (const key in utmObj) {
-    out.textContent += `${key}:${utmObj[key]}\n`;
+    out.textContent += `${key}:${decodeURI(utmObj[key])}\n`;
   }
 }
 function parseUTMtoJSON(utm) {
@@ -17,8 +21,8 @@ function parseUTMtoJSON(utm) {
     changedStr = str.substring(1);
     str = changedStr;
   }
-  while (str.search(/&amp|&AMP|&#x00026|&#38/) != -1 || count > 100) {
-    changedStr = str.replace(/&amp|&AMP|&#x00026|&#38/, '&');
+  while (str.search(/&amp;|&AMP;|&#x00026;|&#38;/) != -1 || count > 100) {
+    changedStr = str.replace(/&amp;|&AMP;|&#x00026;|&#38;/, '&');
     str = changedStr;
     count++;
   }
